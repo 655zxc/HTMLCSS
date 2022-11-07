@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(236, 236, 236);
+        }
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+            margin: 0 auto;
+            margin-top: 200px;
+
+            /* 
+                1.变形就是指通过CSS来改变元素的形状或位置
+                -   变形不会影响到页面的布局
+                - transform 用来设置元素的变形效果
+                    - 平移：
+                        translateX() 沿着x轴方向平移
+                        translateY() 沿着y轴方向平移
+                        translateZ() 沿着z轴方向平移
+                            - 平移元素，百分比是相对于自身计算的
+            */
+            /* transform: translateY(-100px); */
+            /* transform: translateX(100%); */
+            /* 注意不要写两个transform: 
+            会重置 */
+        }
+
+        /* .box2{
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+            margin: 0 auto;
+        } */
+
+        .box3{
+            background-color: orange;
+            position: absolute;
+            /* 
+               2. 之前讲过 在绝对定位中 水平方向满足一个等式 因此可以用来垂直居中
+                  但这种居中方式，只适用于元素的大小确定
+                  如果元素没有宽高 大小由内容撑开而决定 就不行了
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto; */
+
+            left: 50%;
+            top: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            /*
+            3.对于无宽高的元素的居中方法
+            在absoulte中的left top 的百分比是相对于父元素的宽高计算的
+            在transform的百分比是相对于自身计算的
+
+            因此
+            left: 50%;
+            top: 50%;
+            把元素的左上角移动到父元素中心
+
+            transform: translateX(-50%) translateY(-50%);
+            自身移动一半
+            把元素中心移动到父元素中心
+
+
+            */
+          
+        }
+
+
+
+        /*
+            4.实现浮出的效果
+
+            hover时通过变形移动
+
+
+        */
+        .box4, .box5{
+            width: 220px;
+            height: 300px;
+            background-color: #fff;
+            float: left;
+            margin: 0 10px;
+            transition:all .3s;
+            /* 添加过渡效果 */
+        }
+
+        .box4:hover,.box5:hover{
+            /* 向上移动 */
+            transform: translateY(-4px);
+
+
+
+            /* position: relative;
+            top: -4px; */
+            /* 用绝对定位没有过渡 为什么?
+            而且定位不好的地方:会影响到绝对定位的包含块
+            */
+
+
+
+            /* margin-top: -4px; */
+            /* 这个也可以 但是会影响到其他元素*/
+            box-shadow: 0 0 10px rgba(0, 0, 0, .3)
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box1"></div>
+
+    <div class="box2"></div>
+
+    <div class="box3">
+        aaaa
+    </div>
+
+    <div class="box4">
+
+    </div>
+
+    <div class="box5">
+        
+        </div>
+    
+</body>
+</html>

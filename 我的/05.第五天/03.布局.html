@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+        /* 
+        nav article aside是main的子元素 
+        且高度100%和父元素相同
+        由于块元素独占一行 超出了范围 
+        */
+
+        /* 问:为什么article aside会和footer重叠?
+        因为子元素从main中溢出
+        虽然article aside在外边
+        但实际上属于main的子元素
+        在main的布局内
+        如果是兄弟元素
+        是不会发生重叠的 */
+
+
+        header, main, footer{
+            width: 1000px;
+            margin: 0 auto;
+        }
+
+        nav, article, aside{
+            /* float: left; */
+            height: 100%;
+        }
+
+        /* 设置头部 */
+        header{
+            height: 150px;
+            background-color: silver;
+        }
+
+        /* 设置主体 */
+        main{
+            height: 500px;
+            background-color: #bfa;
+            margin: 10px auto;
+        }
+
+
+        /* 设置左侧的导航 */
+        nav{
+            width: 200px;
+            background-color: yellow;
+        }
+
+        /* 设置中间的内容 */
+        article{
+            width: 580px;
+            background-color: orange;
+      
+        }
+
+        /* 设置右侧的内容 */
+        aside{
+            width: 200px;
+            background-color: pink;
+        }
+
+        /* 设置底部 */
+        footer{
+            height: 150px;
+            background-color: tomato;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 创建头部 -->
+    <header></header>
+
+    <!-- 创建网页的主体 -->
+    <main>
+        <!-- 左侧导航 -->
+       <nav></nav>
+
+       <!-- 中间的内容 -->
+       <article></article>
+
+       <!-- 右边的边栏 -->
+       <aside></aside>
+
+    </main>
+    
+    <!-- 网页的底部 -->
+    <footer></footer>
+</body>
+</html>

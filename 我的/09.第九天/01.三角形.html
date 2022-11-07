@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .delta1{
+            width: 0px;
+            height: 0px;
+
+            border: 100px red solid;
+            border-color: transparent transparent green transparent;
+
+            border-top: none;
+
+            /* 得到向上的三角 */
+            
+        }
+
+        .delta2{
+            /* 也可以像下面一样写 */
+
+            /* 用三条边生成三角形 */
+            border-left: 100px solid transparent;
+            border-bottom: 100px solid transparent;
+            border-right: 100px solid yellow;
+
+            width: 0px;
+            height: 0px;
+        }
+
+        .delta3{
+            border-top: 100px solid transparent;
+            border-bottom: 100px solid transparent;
+            border-right: 100px solid green;
+
+            width: 0px;
+            height: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div class="delta1"></div>
+    <div class="delta2"></div>
+    <div class="delta3"></div>
+</body>
+</html>

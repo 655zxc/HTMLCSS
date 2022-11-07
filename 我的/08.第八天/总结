@@ -1,0 +1,33 @@
+2021.10.18
+P89-P100
+font 10-12
+HTML 1-5
+项目7-8
+
+
+1.背景和渐变
+    background-color
+    background-image
+    background-repeat
+    background-position
+    background-size
+    background-origin
+    background-clip
+    background-attachment
+
+    background-image:linear-gradient()/radial-gradient()
+
+2.表格表单
+见笔记
+
+
+
+
+3.
+超链接不是块 要设置宽高
+写上display:block即可
+或者在a里面放div ?
+
+4.实现背景和按钮
+详见项目7-9
+link active hover三种操作分别对应不同的backgroud

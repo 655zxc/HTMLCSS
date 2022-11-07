@@ -1,0 +1,75 @@
+2021.10.23-25
+P115-P134
+animation 1-7
+flex 1-4
+
+
+1.过渡
+transition
+    transition-property
+    transition-duration
+    transition-timing-function
+        linear steps() ease
+    transition-delay
+
+2.动画
+同上 多余的有
+    animation-iteration-count
+    animation-direction
+    animation-play-state
+    animation-fill-mode
+
+3.变形
+    transform
+        translateX() 
+        translateY() 
+        translateZ()  
+        百分比是自身  
+
+        perspective
+        rotateX()
+        rotateY()
+        rotateZ()
+        单位deg和turn
+        
+        scaleX() 
+        scaleY() 
+        scale() 
+        transform-origin
+
+        结合transition使用 否则瞬间变化
+
+
+    绝对定位中:设置宽高和不设置宽高的居中方法?
+
+4.弹性盒的设置
+    4.1
+    display:flex 
+    display:inline-flex 
+    间接子元素不是弹性 
+
+    4.2
+    flex-direction排列
+    四个值
+    分清主轴和辅轴
+
+    4.3
+    flex-grow 默认0
+    flex-shrink 默认1
+    了解伸缩规则
+
+    4.4
+    flex-wrap换行
+
+    4.5
+    justify-content 主轴元素排列规则
+    align-content   辅轴元素排列规则
+
+    4.6
+    align-items   所有元素的对齐方式
+    align-self    align-items的单独设置
+
+5.弹性元素的设置
+    flex-basis 
+    flex
+    order 弹性元素在盒中的排列顺序

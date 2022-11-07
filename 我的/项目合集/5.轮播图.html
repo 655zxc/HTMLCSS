@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../笔记/code/exercise/css/reset.css">
+    <style>
+        li{
+            position:absolute;
+            /* 图片重叠 */
+        }
+
+        ul{
+            /* 
+            为ul开启相对定位，目的是使ul中的pointer可以相对于ul定位而不是相对于初始包含块（html）去定位
+            而且li开启了绝对定位 同上
+           */
+            position: relative;
+            width: 590px;
+            height: 470px;
+            /* 设置宽高才能用margin 0 auto居中 */
+            margin:0 auto;
+            margin-top: 100px;
+        }
+
+        .point{
+            position:absolute;
+            top: 440px;
+            left: 20px;
+            /* 点框在ul里 在左上 */
+            /* 开启绝对定位 移动点框 */
+
+
+            z-index: 2;
+            /* 防止被图片盖住 */
+
+            border: 1px red solid;
+
+            /* height: 20px; */
+            /* 如果不设置高度 并且不设置绝对定位 由于子元素全部浮动 脱离文档流 父元素未脱离 将会发生高度塌陷 */
+           
+        
+        }
+        .smallpoint{
+
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+
+
+            background-color: rgba(255, 255, 255, 0.5);
+            /* 画圆*/
+            border: 2px solid  transparent;
+            /* 增加一个隐形的边框 */
+            background-clip: content-box;
+            /* 将背景颜色值设置到内容区，边框和内边距不在有背景颜色 */
+
+
+
+            float: left;
+            /* 浮动 使小点横着排列 */
+            margin-right: 12px;
+        }
+
+        .smallpoint:hover{
+            background-color: rgba(255, 255, 255, 1);
+            /* 选中时背景 */
+            border: 2px solid  rgba(255, 255, 255, 0.5);
+            /* 增加选中时边框 */
+        }
+
+        ul li:nth-child(4){
+            z-index: 1;
+            /* 显示某个元素 */
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <ul class = "outer">
+        <li>
+            <a href=""><img src="../../笔记/code/exercise/img/05/1.jpg" alt=""></a>
+        </li>
+        <li>
+            <a href=""><img src="../../笔记/code/exercise/img/05/2.jpg" alt=""></a>
+        </li>
+        <li>
+            <a href=""><img src="../../笔记/code/exercise/img/05/3.jpg" alt=""></a>
+        </li>
+        <li>
+            <a href=""><img src="../../笔记/code/exercise/img/05/4.jpg" alt=""></a>
+        </li>
+        <li>
+            <a href=""><img src="../../笔记/code/exercise/img/05/5.jpg" alt=""></a>
+        </li>
+        <li>
+            <a href=""><img src="../../笔记/code/exercise/img/05/6.jpg" alt=""></a>
+        </li>
+        <li>
+            <a href=""><img src="../../笔记/code/exercise/img/05/7.jpg" alt=""></a>
+        </li>
+        <li>
+            <a href=""><img src="../../笔记/code/exercise/img/05/8.jpg" alt=""></a>
+        </li>
+       
+        <div class="point">
+            <a href="">
+                <div class="smallpoint"></div>
+            </a>
+            <a href="">
+                <div class="smallpoint"></div>
+            </a>
+            <a href="">
+                <div class="smallpoint"></div>
+            </a>
+            <a href="">
+                <div class="smallpoint"></div>
+            </a>
+            <a href="">
+                <div class="smallpoint"></div>
+            </a>
+            <a href="">
+                <div class="smallpoint"></div>
+            </a>
+            <a href="">
+                <div class="smallpoint"></div>
+            </a>
+            <a href="">
+                <div class="smallpoint"></div>
+            </a>
+        </div>
+    </ul>
+  
+</body>
+</html>

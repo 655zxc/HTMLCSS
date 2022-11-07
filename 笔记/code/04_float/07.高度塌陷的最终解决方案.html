@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box1{
+            border: 10px red solid;
+
+            /* overflow: hidden; */
+        }
+        /* 方法1.之前讲的解决高度塌陷的方法 */
+
+        .box2{
+            width: 100px;
+            height: 100px;
+            background-color: #bfa;
+            float: left;
+        }
+
+        .box3{
+            clear: both;
+        }
+             /* 
+            方法2.设置一个box3 作为box1的子元素 放在box2下面
+              清除浮动元素对box3的影响 这样box3就在box2下边(即原位置)
+              就会给box3增加一个margin-top
+              这样box3就能撑开box1 相当于一个工具人
+
+
+              实际上box2是浮动的 box3上面是没东西的 
+            */
+
+        .box1::after{
+            content: '';
+            display: block;
+            /* 行内元素不会独占一行 转化为块元素 也可以用table*/
+            clear: both;
+        }
+
+            /*
+            方法3.原理和2相同
+               在box1的最后添加一段内容 转化为块元素
+               消除浮动元素对这个块元素的影响
+               
+               让这个块元素撑开box1
+             */
+        
+    </style>
+</head>
+<body>
+
+    <div class="box1">
+        <div class="box2"></div>
+        <!-- <div class="box3">aa</div> -->
+        <!-- 方法2 -->
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outer{
+            background-color: lawngreen;
+            /* height: 175px; */
+            /* 写上就不会了 是多少就是多少*/
+        }
+
+        .inner{
+            width: 100px;
+            height: 100px;
+            background-color: lightblue;
+            margin-bottom: 50px;
+        }
+
+        /* 当outer没有设置heigth 起会由子元素决定? */
+        /* 可以看到 outer被两个inner撑开 */
+
+    </style>
+</head>
+<body>
+    <div class="outer">
+
+        <div class="inner"></div>
+
+        <div class="inner"></div>
+
+    </div>
+</body>
+</html>

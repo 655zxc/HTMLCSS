@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outer{
+            display: flex;
+            /* flex-direction: row-reverse; */
+            border: 10px red solid;
+
+            /* width: 320px; */
+        }
+
+        .outer>div{
+            width: 100px;
+            height: 100px;
+        }
+
+        .box1{
+            background-color: brown;
+            flex-grow: 1;
+            flex-shrink: 0;
+        }
+
+        .box2{
+            background-color: burlywood;
+            flex-grow: 2;
+            flex-shrink: 1;
+        }
+
+        .box3{
+            background-color: chocolate;
+            flex-grow: 3;
+            flex-shrink: 2;
+        }
+
+        .box4{
+            background-color: cornflowerblue;
+            flex-grow: 4;
+            flex-shrink: 3;
+        }
+
+        /* 1-4增大的长度分别是 110 220 330 440 */
+        /* 如果flex-grow为0 则不会增长 */
+
+
+        /* 当设置父元素宽度320<400
+        1不变
+        2-4收缩比例1 2 3 */
+
+        /* 注意 当父元素宽度为200
+        发现box4因为box5无法收缩
+        为什么? */
+
+
+        .box5{
+            width: 50px;
+            height: 50px;
+            background-color: darksalmon;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="box1">1</div>
+        <div class="box2">2</div>
+        <div class="box3">3</div>
+        <div class="box4">4
+            <div class="box5">5</div>
+            <!-- 5没有生效 仍然是4的子元素 处于4的内容区 -->
+        </div>
+    </div>
+</body>
+</html>

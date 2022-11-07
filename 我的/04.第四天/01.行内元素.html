@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <style>
+          span{
+
+           background-color:red;
+           /* padding: 100px; */
+           /* 给行内元素设置内边距 不会影响span的垂直位置 
+           垂直的内边距直接加载原位置上下
+           上内边距到浏览器上边去了 看不到 */
+
+
+
+           /* border: 100px solid green; */
+           /* 同上 */
+
+
+
+
+           /* margin: 100px; */
+           /* 同上 只会影响水平 注意水平margin不会合并*/
+
+              }
+
+
+
+             /* 总结 一句话 垂直方向不影响 水平方向影响  */
+
+
+
+
+           div{
+
+
+              background-color: khaki;
+              width: 300px;
+              height: 300px;
+              }
+     </style>
+</head>
+<body>
+    
+    <span>一个span</span>
+    <span>一个span</span>
+    <!-- 行内元素不会独占一行 这两个span排在了一行 -->
+    <div>一个div</div>
+    
+</body>
+</html>

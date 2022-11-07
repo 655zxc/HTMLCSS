@@ -1,0 +1,40 @@
+2021.10.7
+P1-P18
+01_introduce 01-06
+
+1.写一个基本结构
+
+
+2.
+input 行内元素
+h1
+p p中无法插入块元素
+四个实体
+meta及其几个主要属性 
+
+
+3.语义化标签
+块元素和行内元素
+hgroup
+em
+strong
+长短引用
+br
+
+4.布局元素
+header
+main
+footer 
+nav 
+aside 
+article
+section
+div
+span 
+
+5.
+分清上面的标签都在哪?head body
+===========================================
+<!doctype html> 文档声明
+
+charset 字符集

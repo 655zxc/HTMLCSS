@@ -1,0 +1,292 @@
+* {
+	font-family: 'Poppins', sans-serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+/* 重置默认样式 */
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background: linear-gradient(45deg,#ffaf00, #bb02ff);
+	/* 渐变背景 */
+	background-attachment: fixed;
+}
+/* 设置body */
+
+
+.container {
+	position: relative;
+	width: 1440px;
+	padding:20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	
+	/* left: 100px; */
+}
+
+.container .card {
+	position: relative;
+	width: 960px;
+	/* height: 480px; */
+	height: 600px;
+	background: #fff;
+	margin: 20px;
+	border-radius: 20px;
+	overflow: hidden;
+	box-shadow: 0 15px 25px rgba(0, 0 ,0 , .2);
+	transition: 0.5s;
+    background-color: rgba(255, 255,255,0.4);
+
+
+     /* backdrop-filter: blur(3px); */
+    /* 毛玻璃 */
+
+}
+/* 所有卡片设置 */
+
+a{
+    text-decoration: none;
+}
+
+.container .card:hover{
+	filter: blur(0px);
+	/* transform: scale(1.03); */
+    /* 移入时放大 */
+	opacity: 1;
+}
+/* 鼠标移入效果 */
+
+.left {
+    width: 200px;
+    height: 600px;
+    border-right: 2px solid rgba(255, 255,255,0.2);;
+    position: absolute;
+    left: 0;
+    top: 0;
+    
+}
+/* 左边区块 */
+
+
+
+/*************************************************************************************/
+
+.a_button,input{
+    margin: 0;
+	padding: 0;
+	border: 1px solid transparent;  
+	outline: none;     
+    /* 消除按钮默认样式*/
+
+
+
+
+
+    position: relative;
+    padding: 10px 2px;
+    margin: 0 45px;
+    color: rgba(255, 255,255,0.9);
+    background:rgba(0,0,0,0);
+    background-color: none;
+    text-decoration: none;
+    font-size: 20px;
+    text-transform: uppercase;
+    transition: 0.5s;
+    overflow: hidden;
+    outline: none;
+
+   
+}
+
+.a_button{
+    left: -380px;
+    top: -10px;
+}
+
+/* 返回首页的样式设置 */
+
+.a_button:hover{
+    background: rgba(255, 255,255,0.1);
+    color: rgba(255, 255,255,0.9);
+    box-shadow: 0 0 20px rgba(255, 255,255,0.4);
+    transition-delay: 0.5s;
+  }
+  /* 返回首页按钮的鼠标移入设置 */
+/* 这是个超链接 */
+
+
+.a_button::before{
+    content: '';
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    border-top:2px solid rgba(255, 255,255,0.4);
+    border-left:2px solid rgba(255, 255,255,0.4);
+    transition: 0.5s;
+    transition-delay: 0.5s;
+  }
+
+  /* 左上角的边框 */
+
+
+  .a_button:hover::before{
+    width: 97%;
+    height: 97%;
+    transition-delay: 0s;
+  }
+/* 左上角边框变化 */
+
+
+.a_button::after{
+    content: '';
+    position: absolute;
+    right:0;
+    bottom: 0;
+    width: 10px;
+    height: 10px;
+    border-bottom:2px solid rgba(255, 255,255,0.4);
+    border-right:2px solid rgba(255, 255,255,0.4);
+    transition: 0.5s;
+    transition-delay: 0.5s;
+  } 
+
+  /* 右下角边框 */
+  
+  .a_button:hover::after{
+    width: 97%;
+    height: 97%;
+    transition-delay: 0s;
+  }
+  /* 右下角边框变化
+/*************************************************************************************/
+
+
+
+.return{
+    position: relative;
+    padding: 10px 30px;
+    margin: 0 45px;
+    color: rgba(255, 255,255,0.9);
+    text-decoration: none;
+    font-size: 20px;
+    text-transform: uppercase;
+    transition: 0.5s;
+    overflow: hidden;
+
+    left: -380px;
+    top: -140px;
+}
+/* 返回首页的样式设置 */
+
+.return:hover{
+    background: rgba(255, 255,255,0.1);
+    color: rgba(255, 255,255,0.9);
+    box-shadow: 0 0 20px rgba(255, 255,255,0.4);
+    transition-delay: 0.5s;
+  }
+  /* 返回首页按钮的鼠标移入设置 */
+/* 这是个超链接 */
+
+
+.return::before{
+    content: '';
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    border-top:2px solid rgba(255, 255,255,0.4);
+    border-left:2px solid rgba(255, 255,255,0.4);
+    transition: 0.5s;
+    transition-delay: 0.5s;
+  }
+
+  /* 左上角的边框 */
+
+
+  .return:hover::before{
+    width: 97%;
+    height: 97%;
+    transition-delay: 0s;
+  }
+/* 左上角边框变化 */
+
+
+.return::after{
+    content: '';
+    position: absolute;
+    right:0;
+    bottom: 0;
+    width: 10px;
+    height: 10px;
+    border-bottom:2px solid rgba(255, 255,255,0.4);
+    border-right:2px solid rgba(255, 255,255,0.4);
+    transition: 0.5s;
+    transition-delay: 0.5s;
+  }
+
+  /* 右下角边框 */
+  
+  .return:hover::after{
+    width: 97%;
+    height: 97%;
+    transition-delay: 0s;
+  }
+  /* 右下角边框变化 */
+  /*************************************************************************************/
+
+  textarea{
+    margin: 0;
+    padding: 0;
+    border: 1px solid transparent;  
+    outline: none;     
+      /* 消除文本框默认样式*/
+
+      border-radius: 20px;
+
+      width: 500px;
+      height: 190px;
+
+      position: relative;
+
+      left: 85px;
+      top: 40px;
+
+      background-color: rgba(255, 255,255,0.4);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+      text-indent: 20px;
+
+      font-size: 14px;
+
+      
+  }
+
+
+
+
+
+
+
+
+  /*************************************************************************************/
+
+
+
+
+
+
+
+
+
+
+
+  /*************************************************************************************/

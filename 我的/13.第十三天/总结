@@ -1,0 +1,27 @@
+2021.10.26
+P135-P142
+flex 5-9
+项目17
+
+
+1.align-content和align-items的区别
+一个多行 一个单行
+align-content属性只适用于多行的flex容器
+所以对于只有一行的flex元素，align-content是没有效果的
+https://blog.csdn.net/sinat_27088253/article/details/51532992
+单行用align-items
+
+
+2.像素视口
+看笔记
+
+3.项目17
+主要注意rem 和 flex布局
+
+总结一下box4总课程
+
+写了一个box4
+装有一个title 和一个list 这两个采用margin隔开
+title是一个flex 方便对两则的文字排列 分隔栏用border实现 title的高度由文字撑开
+list是一个flex 包含多个content 这些content横着排列 content过多且被设置不能伸缩而溢出(注意list没有宽度才能溢出) list有一个overflow生成滚动
+content是一个flex flex-direction被设为竖直排列 通过justify-content方便让竖直的内容排版 然后横向排版用padding就可以了

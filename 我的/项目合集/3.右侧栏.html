@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .right-nav {
+            width: 300px;
+            margin: 0 auto;
+            margin-top: 100px;
+            background-color: white;
+
+            border-top: 1px solid darkgray;
+            border-bottom: 1px solid darkgray;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+
+        .title a:hover,
+        a p:hover {
+            color: #c81623;
+        }
+
+        .right-nav li {
+
+            color: darkgray;
+            font-size: 14px;
+            padding-bottom: 5px;
+            /* 给单个元素增加padding 因此我们可以不用设置全局div的padding 要哪个调哪个*/
+            list-style: square;
+            /* 方形点 */
+            /* 也可以用::before添加方形点 */
+
+        }
+
+        .right-nav h2 {
+
+            color: dimgray;
+            font-size: 16px;
+            height: 30px;
+            margin: 0;
+            display: inline-block;
+            border-top: 1px solid red;
+            /* 设置为行内块元素 同时有两类特性
+            设置之后 宽度和文字相同 top边框就很好设置了 */
+            margin-top: -1px;
+            /* 通过margin-top将h2上移，盖住上边框 */
+
+            padding-top: 10px;
+            /* 加入一个内边距 体现文字在中间的效果
+            实际上是10padding+30heigth */
+
+
+        }
+
+        .img-title{
+            margin-top: -34px;
+            padding-left: 14px;
+            color: white;
+            font-family: Microsoft JhengHei;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="right-nav">
+
+        <h2 class="title">
+            <a href="">
+                体育
+            </a>
+        </h2>
+        <a href=""><img src="../../笔记/code/exercise/img/03/1.jpeg" alt="">
+            <h3 class="img-title">
+                费德勒首负迪米 扶额头不满发挥
+            </h3>
+            <!-- 把文字和图片放在同一个超链接里 把文字向上移动 -->
+        </a>
+        <ul>
+            <a href="">
+                <li>乔治:我爱LA 喜欢和LBJ一起打球</li>
+            </a>
+            <a href="">
+                <li>格林:3年前降薪就在等KD 特制T恤嘲讽LBJ</li>
+            </a>
+            <a href="">
+                <li>塔克4000双鞋让保罗羡慕嫉妒 乔丹被震惊</li>
+            </a>
+            <a href="">
+                <li>CBA下季新赛制:常规赛4组循环 增至46轮</li>
+            </a>
+
+        </ul>
+
+
+    </div>
+</body>
+
+</html>

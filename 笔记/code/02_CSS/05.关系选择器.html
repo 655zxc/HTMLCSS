@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+        /* 
+        1.子元素选择器
+                作用：选中指定父元素的指定子元素 注意父元素会有多个子元素
+                语法：父元素 > 子元素
+
+
+            为第一个div(给第一个div命名就可以了 否则会选择全体div)的子元素span设置一个字体颜色红色
+            （为div直接包含的span设置一个字体颜色）
+
+           
+            下列例子为 [是div且类名为box的标签的子元素span] 的选择器
+         */
+
+        /* div.box > span{
+            color: orange;
+        } */
+
+         /* div > p > span{
+             color: red;
+         } */
+
+
+
+
+
+
+        /* 
+        2.后代元素选择器：
+                作用：选中指定元素内的指定后代元素
+                语法：祖先 后代(用空格连接)
+
+                下列例子将div包含的所有span操作
+
+                不一定要层层选拔,从开头div选择,比如第二个例子,直接选了p
+        */
+
+
+         /* div span{
+             color: skyblue
+         } */
+
+         /* p span{
+             color: skyblue;
+         } */
+        
+
+
+
+
+
+
+         /* 
+        3.选择下一个兄弟
+                语法：前一个 + 下一个
+
+                下例,找p的第一个兄弟
+                注意p的下一个若不是span 则不找了
+                比如 我们在p的下面插入一个div或者是br
+                那么第一个span不会红
+          */
+
+          /* p + span{
+              color: red;
+          } */
+
+
+
+
+
+
+
+          /*
+        4.选择下边所有的兄弟
+                语法：兄 ~ 弟
+
+                下例,找p下面的所有兄弟
+                注意 上面的不会找 比如span0不会红
+          */
+
+          /* p ~ span{
+              color: red;
+          } */
+
+
+          /*
+          5.总结
+          1 子 > 可套娃
+          2 后代 空格
+          3 下面的第一个兄弟 +
+          4 下面的所有兄弟 ~
+          */
+    </style>
+</head>
+<body>
+
+    <!-- 
+
+        元素关系
+
+        父元素
+            - 直接包含子元素的元素叫做父元素
+        子元素
+            - 直接被父元素包含的元素是子元素
+        祖先元素
+            - 直接或间接包含后代元素的元素叫做祖先元素
+            - 一个元素的父元素也是它的祖先元素
+        后代元素
+            - 直接或间接被祖先元素包含的元素叫做后代元素
+            - 子元素也是后代元素
+        兄弟元素
+            - 拥有相同父元素的元素是兄弟元素
+
+            注意 父元素 子元素 都是直接包含
+
+     -->
+
+
+    <div class="box">
+        我是一个div
+
+        <br>
+        <br>
+        <span>我是div中的span0元素</span>
+
+        <p>
+            我是div中的p元素
+            <br>
+            <br>
+            <span>我是p元素中的span</span>
+        </p>
+
+
+        <!-- <div>我是div中的div</div> -->
+        <!-- <br> -->
+
+
+        <span class = "a">我是div中的span1元素</span>
+        <br>
+        <span>我是div中的span2元素</span>
+        <br>
+        <span>我是div中的span3元素</span>
+        <br>
+        <span>我是div中的span4元素</span>
+        
+
+    </div>
+
+    <br>
+    <span>
+        我是div外的span
+    </span>
+    
+
+    
+</body>
+</html>

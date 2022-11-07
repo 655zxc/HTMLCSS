@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../笔记/code/exercise/css/reset.css">
+    <link rel="stylesheet" href="../../笔记/code/06_font&background/fa/css/all.css">
+    <style>
+        /* 首先将网页分成三个div 
+          再将div分成几个部分
+          对每个部分调整margin padding等属性
+          一般没写height和width
+        */
+        .outer{
+            width:240px;
+            margin: 0 auto;
+            margin-top: 100px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, .3);
+        }
+
+
+        .info{
+            padding: 0 18px;
+            color: #acaaaa;
+            font-size: 14px;
+        }
+        h2{
+            color: #717171;
+            font-size: 18px;
+            margin: 13px 0 15px 0;
+        }
+
+        .description{
+            margin: 18px 4px;
+            line-height: 20px;
+        }
+
+        .content{
+            margin: 18px 4px;
+            line-height: 20px;
+        }
+
+        .divstar{
+            height: 46px;
+            line-height: 46px;
+            border-top: 1px solid #e9e9e9;
+            /* 边框用border实现 不是hr */
+            color: #ddd;
+            /* 全体设置为灰色 绿色在下面覆盖 */
+            padding: 0 16px;
+        }
+           
+        .star{
+            float: left;
+        }
+
+        .weibo{
+            float: right;
+        }
+        
+        .star .light{
+            color: #b9cb41;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+
+
+
+        <div>
+            <img src="../../笔记/code/exercise/img/10/1.jpg" alt="">
+        </div>
+
+
+
+        <div class="info">
+            <h2 class = "movietitle"> 电影</h2>
+            <p class = "description"><i class="fas fa-map-marker-alt" style = "font-size: 13px;"></i> 动画</p>
+            
+            <p class = "content">这是一部迪士尼的动画电影，非常非常的好看</p>
+            
+        </div>
+        
+
+        <div class="divstar">
+            <ul class="star">
+                <li class="fas fa-star light"></li>
+                <li class="fas fa-star light"></li>
+                <!-- 亮星星有两个类名 -->
+                <li class="fas fa-star"></li>
+                <li class="fas fa-star"></li>
+                <!-- 图标文字在样式表中定义成了inline-block -->
+             </ul>
+
+             <!-- 创建第二个ul 与第一个ul垂直排列 -->
+             <ul class="weibo">
+                 <li class="fab fa-weibo"></li>
+             </ul>
+        </div>
+
+
+    </div>
+</body>
+</html>

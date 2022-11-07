@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .outer{
+            width: 800px;
+            height: 200px;
+            border: 10px red solid;
+        }
+
+        .inner{
+            /* width: auto;  width的值默认就是auto*/
+            width: auto;
+            height: 200px;
+            background-color: #bfa;
+            margin-right: 100px;
+            margin-left: auto;
+            /* margin-left: 100px;
+            margin-right: 400px */
+
+
+            /* 
+            1.元素的水平方向的布局：
+                元素在其父元素中水平方向的位置由以下几个属性共同决定“
+                        margin-left
+                        border-left
+                        padding-left
+                        width
+                        padding-right
+                        border-right
+                        margin-right
+
+            2.一个元素在其父元素中，水平布局必须要满足以下的等式
+                margin-left+border-left+padding-left+width+padding-right+border-right+margin-right = 其父元素内容区的宽度 （必须满足）
+
+
+                0 + 0 + 0 + 200 + 0 + 0 + margin-right(值为0) = 800
+                                  ⬇自动调整
+                0 + 0 + 0 + 200 + 0 + 0 + margin-right(600) = 800
+
+
+                100 + 0 + 0 + 200 + 0 + 0 + margin-right(值为100) = 800
+                                  ⬇自动调整
+                100 + 0 + 0 + 200 + 0 + 0 + margin-right(500) = 800
+
+
+                    - 以上等式必须满足，如果相加结果使等式不成立，则称为过度约束，则等式会自动调整
+                        - 调整的情况：
+                            - 如果这七个值中没有为 auto 的情况，则浏览器会自动调整margin-right值以使等式满足
+
+             3.当元素被设置为auto
+                    - 这七个值中有三个值可以设置为auto
+                        width
+                        margin-left
+                        maring-right
+                        3.1 - 如果某个值为auto，则会自动调整为auto的那个值以使等式成立
+                            0 + 0 + 0 + auto + 0 + 0 + 0 = 800  auto = 800
+                            0 + 0 + 0 + auto + 0 + 0 + 200 = 800  auto = 600
+                            200 + 0 + 0 + auto + 0 + 0 + 200 = 800  auto = 400
+
+                            auto + 0 + 0 + 200 + 0 + 0 + 200 = 800  auto = 400
+
+
+                            
+
+                        3.2 - 如果将一个宽度和一个外边距设置为auto，则宽度会调整到最大，设置为auto的外边距会自动为0
+                              auto左边距 + 0 + 0 + auto中 + 0 + 0 + 100= 800  auto左边距 = 0  auto中 = 700
+
+
+                        3.3 - 如果将两个外边距设置为auto，宽度固定值，则会将外边距设置为相同的值
+                             auto + 0 + 0 + 200 + 0 + 0 + auto = 800  auto = 300
+
+                            所以我们经常利用这个特点来使一个元素在其父元素中水平居中
+                            示例：
+                                width:xxxpx;
+                                margin:0 auto;
+                                这样设置margin 上下为0 左右自动
+
+                        3.4 - 如果将三个值都设置为auto，则外边距都是0，宽度最大
+                             auto左边距 + 0 + 0 + auto中 + 0 + 0 + auto右边距 = 800 auto左边距 = auto右边距 = 0 auto = 800
+
+                        3.5 注意 如果width设置为1000 大于800 margin会被设置成-200使等式满足
+
+
+
+             */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="outer">
+        <!-- 由于div是一个行元素 会占一行 因此outer的7个属性加起来会占浏览器的一整行 
+        而inner是outer的子元素 7个属性加起来只有outer的width 即800 -->
+
+        <div class="inner"></div>
+
+        <!-- inner是outer中的一个块
+        outer800*200 inner200*200
+        inner放在outer上面 -->
+
+        <!-- 子元素是在父元素的内容中显示的 -->
+
+
+    </div>
+
+
+    
+</body>
+</html>

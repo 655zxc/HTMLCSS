@@ -1,0 +1,16 @@
+2021.10.10
+P51-P54
+03_layout 08-10
+
+1.margin折叠
+    兄弟折叠 取大
+   *父子折叠 子上边距会传给父 暂时用border解决
+
+2.行内元素的盒模型
+    见三元素连接
+    行内元素只有设置左右margin有效 上下margin对位置无效
+                   左右padding有效 上下padding会显示但对位置无效
+    display显示类型 和 visilibity显示状态
+
+3.默认样式
+    设置margin padding为0 或 引入css

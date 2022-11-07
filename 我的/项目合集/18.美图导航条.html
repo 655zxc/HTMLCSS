@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../笔记/code/exercise/css/reset.css">
+    <link rel="stylesheet" href="../../笔记/code/06_font&background/fa/css/all.css">
+    <style>
+        html{
+            font-size: 14px;
+        }
+
+        /* 左边logo */
+        .meitu a {
+            display: block;
+            height: 48px;
+            width: 140px;
+            overflow: hidden;
+
+            /* 背景图 */
+            background-image: url('../../笔记/code/exercise/img/18/dff63979.sprites-index@2x.png');
+            background-size: 260%;
+            background-position: 10px 10px;
+        }
+
+        /* 顶部容器 */
+        .top{
+            width: 100%;
+            height: 48px;
+            /* 设置宽高 */
+            background-color: black;
+        }
+
+        /* 容器内部 */
+        .outer{
+            width: 80%;
+            height: 100%;
+            background-color: black;
+            margin: 0 auto;
+            /* 居中 */
+
+            display: flex;
+            justify-content:space-between;
+            align-items:center;
+            /* 弹性盒 排列内容 */
+        }
+
+        /* 中间导航条 */
+        .nav{
+            width: 75%;
+        }
+
+        /* 中间导航条的内容排列 */
+        .nav ul{
+            display: flex;
+            justify-content: space-between;
+        }
+
+
+        .nav a{
+            text-decoration: none;
+            color: white;
+        }
+
+        .user{
+            color: white;
+        }
+
+        .nav a:hover,.user i:hover{
+            color: darkgray;
+        }
+
+
+
+        /* ================================================ */
+
+
+        @media (max-width: 800px){
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top">
+        <div class="outer">
+            <div class="meitu">
+                <a href="">
+                    <!-- <img src="../../笔记/code/exercise/img/18/dff63979.sprites-index@2x.png" alt=""> -->
+                </a>
+            </div>
+            <div class="nav">
+                <ul>
+                    <li> <a href="">手机</a></li>
+                    <li><a href="">美容仪器</a></li>
+                    <li><a href="">配件</a></li>
+                    <li><a href="">服务支持</a></li>
+                    <li><a href="">企业网站</a></li>
+                    <li><a href=""><i class="fas fa-search"></i></a></li>
+                </ul>
+            </div>
+
+            <div class="user">
+                <i class="fas fa-user"></i>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

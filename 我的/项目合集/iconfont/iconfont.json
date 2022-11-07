@@ -1,0 +1,16 @@
+{
+  "id": "2869031",
+  "name": "MY",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "6886337",
+      "name": "分隔",
+      "font_class": "fenge",
+      "unicode": "e62b",
+      "unicode_decimal": 58923
+    }
+  ]
+}

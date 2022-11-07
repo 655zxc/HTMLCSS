@@ -1,0 +1,690 @@
+/* 此css用于设置index.html的样式 */
+/* 顶部导航栏外框 */
+.outer{
+    height: 40px;
+    font-size: 12px;
+    color: #b0b0b0;
+    background-color: #333333;
+}
+/* 顶部导航栏内框 */
+.inner{
+    height: 40px;
+    width: 1226px;
+    margin: 0 auto;
+}
+/* 顶部导航栏左列表 */
+.left{
+    float: left;
+}
+/* 顶部导航栏购物车 */
+.shopping_cart{
+    float: right;
+    width: 120px;
+    height: 40px;
+    background-color: rgb(66, 66, 66);
+    margin-left: 30px;
+    line-height: 40px;
+    text-align: center;
+}
+/* 顶部导航栏右列表 */
+.right{
+    float:right;
+}
+/* 顶部导航栏左右列表子元素 */
+.left li,
+.right li{
+    float: left;
+    line-height: 40px;
+}
+/* 分割栏 */
+.line{
+    width: 1px;
+    height: 14px;
+    margin: 13px 8px;
+    background-color: #424242;
+}
+ /*顶部导航栏的字体超链接 */
+ .head_title1 a{
+    text-decoration: none;
+    color: #b0b0b0;
+}
+/* 顶部导航栏左右列表鼠标移入 */
+.left a:hover,
+.right a:hover{
+    color: white;
+}
+/* 顶部导航栏购物车鼠标移入 */
+.shopping_cart li:hover
+{
+    /* li放在a里面  其他地方是a放在li里面*/
+    /* 写成li:hover 才能同时设置字体和背景颜色1 */
+    color: rgb(255, 103, 0);
+    background-color: white;
+}
+
+
+/*====================================================================*/
+
+/* 以上是顶部导航栏的样式 */
+
+/* 
+一个outer置顶 一个inner居中 
+三个ul列表 一个ul左浮 两个ul右浮 
+ul的子元素li全部左浮 
+*/
+
+
+/*====================================================================*/
+
+
+/*下载app这个li元素 */
+ .app-wrapper{
+    /* 开启相对定位 下拉框根据这个定位*/
+    position: relative;
+ }
+
+/* 下拉框(下载app)的正常状态 */
+.qrcode{
+    width: 124px;
+    /* height: 148px; */
+    background-color: white;
+    /* 行高继承了祖先元素的40px 会溢出 需要重置 */
+    line-height: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    /* 开启绝对定位 */
+    position: absolute;
+    left: -38px;
+    /* 正常状态不显示 */
+    /* display: none; */
+    /* 居中 */
+    text-align: center;
+
+
+    /* 下面是设置过渡动画 */
+    height: 0px;
+    overflow: hidden;
+    transition: height 0.25s;
+
+    /* 防止被图片遮挡 */
+    z-index: 100;
+}
+
+/* 下拉框的图片 */
+.qrcode img{
+    width: 90px;
+    height: 90px;
+    margin: 17px;
+}
+
+/* 鼠标移入下拉框的状态 */
+.app-wrapper:hover .qrcode
+/* .app-wrapper:hover .delta */
+{
+    /* 鼠标移入时 qrcode和delta显示 状态由none变为block*/
+    /* display: block; */
+
+/* 下面是设置过渡动画 */
+    height: 148px;
+}
+
+/* 下面是设置过渡动画 */
+.app-wrapper:hover .delta{
+    display: block;
+}
+
+/* 下拉框的文字 */
+.qrcode span{
+    color: black;
+    font-size: 14px;
+}
+
+/* 下拉框的三角形 */
+.delta{
+    width: 0px;
+    height: 0px;
+
+    /* 画三角形 */
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 6px solid white;
+
+    /* 开启绝对定位 */
+    position: absolute;
+    left: 14px;
+    top: 34px;
+
+    display: none;
+
+    /* 另外 也可以在app-wrapper使用伪类添加三角形 添加内容为content:''以及样式 */
+}
+
+
+
+/*====================================================================*/
+
+/* 以上是顶部导航栏下拉框的样式 */
+
+/* 
+1.定位问题:给下载app这个li元素开启相对定位,子元素三角形和下拉框开启绝对定位
+2.隐藏显示问题:在下拉框和三角形中写完样式,设置display为none,在hover里设置为block
+3.画三角形问题:设置三边,另外两边隐藏
+4.父子问题:小三角 下拉框都是下载app的子元素,这样才能绝对定位 
+5.过度问题:将正常状态高度设置0,并且hidden溢出内容,移入时设置为148px,transition设置过渡时间
+           如果想看原来的设置 删掉过渡语句 打开注释语句
+           注意 小三角在这里还是原来的设置 没参加过渡动画
+*/
+
+/*====================================================================*/
+
+/* 第二个导航栏总体 */
+.head_title2{
+    height: 100px;
+    width: 1226px;
+    margin: 0 auto;
+}
+
+/****************************************/
+
+/* 第二个导航栏左边的logo */
+.logo{ 
+    float: left;
+    margin-top: 22px;
+    /* 设置外边距实现垂直居中 由于logo浮动了 不会出现父子外边距折叠 
+    如果logo没有浮动 记得给父元素加上clearfix */
+    width: 55px;
+    height: 55px;
+    position: relative;
+    overflow: hidden;
+    /* 隐藏溢出的超链接 */
+}
+
+/* 
+设置logo里的两个超链接(mi和home)的属性 
+这是老师的写法 把a block了
+我的写法是把logo放在a里 给logo写宽高背景 用logo把a撑开 
+二者都可以?
+*/
+.logo a{
+    width: 55px;
+    height: 55px;
+    /* 超链接要设置宽高 否则没有背景 因为0*0的背景没有 */
+    background-color: rgb(255, 103, 0);
+    display: block;
+    background-image: url('../../../../笔记/code/mi/img/mi-logo.png');
+    /* 给a设置背景 */
+    background-position: center;
+    /* 背景居中 */
+    position: absolute;
+    /* 为两个a开启绝对定位 */
+    left: 0;
+    transition: left 0.25s;
+    /* 设置过渡动画 当两个超链接的left改变时 会花费0.25s */
+}
+
+/* 重置超链接home的背景图 */
+.logo .home{
+    background-image: url('../../../../笔记/code/mi/img/mi-home.png');
+    left: 55px;
+    /* 移动超链接home */
+}
+
+/* 鼠标移入logo时 两个超链接的操作 */
+.logo:hover .mi{
+    left: -55px;
+    /* 当鼠标指向logo时 注意不能写mi
+    mi的left设置为-55 
+    从0到-55
+    */
+}
+.logo:hover .home{
+    left:0;
+    /* 从55到0 */
+}
+
+/****************************************/
+
+/* 中间导航栏 */
+.title2_nav{
+    float: left;
+    width: 861px;
+    height: 100px;
+    /* background-color: tomato; */
+    margin-left: 7px;
+
+    /* 让文字居中 还能把li高度变成100*/
+    line-height: 100px;
+}
+
+
+
+/* 中间导航栏列表整体ul */
+.title2_nav ul{
+    /* 中间导航栏整体长861 ul是导航栏的子元素 设置一个左边距 li是ul的子元素 导航栏和li需要浮动*/
+    margin-left: 150px;
+    height: 100px;
+    /* background-color: coral; */
+    /* 注意不设置宽高是没有颜色的 */
+}
+
+/* 中间导航栏列表li元素 */
+.title2_nav li{
+    float: left;
+    font-size: 16px;
+    padding-left: 20px;
+    /* li没设置宽度 设个边距 撑开ul */
+    /* 看情况 设置为padding能选中
+    设置为margin这部分是选不中的 li:hover不生效 */
+
+}
+
+/* 超链接鼠标移入 */
+.title2_nav a:hover{
+    color: rgb(255, 103, 0);;
+}
+
+/****************************************/
+
+
+
+/* 下拉框设置 */
+.ComboBox{
+    width: 100%;
+    height: 0;
+    background-color: white;
+
+    /* 绝对定位 */
+    position: absolute;
+    top: 140px;
+    left: 0;
+    z-index: 100000;
+
+    transition: height 0.25s;
+}
+
+/* 产生下拉框的选择器 */
+.a_ComboBox:hover ~ .ComboBox,
+.ComboBox:hover
+/* 第一个选择器是:选中相应超链接时 找它所有兄弟中的ComboBox 进行操作
+第二个:选中ComboBox也进行操作 */
+{
+    /* 高度在被选中时才有 */
+    height: 220px;
+    border-top: 1px solid rgb(224, 224, 224);
+    box-shadow: 0 4px 3px rgba(0, 0, 0, 0.3);
+    /* 设置阴影 半径3 向下移动4 这样top就没有阴影了 */
+}
+/****************************************/
+
+/* 右侧搜索框 */
+.search{
+    float: right;
+    width: 296px;
+    height: 100px;
+}
+
+/* 搜索栏表单 */
+.search form{
+    width: 296px;
+    height: 50px;
+    margin-top: 26px;
+    
+}
+
+/* 文本框 */
+form input{
+    height: 48px;
+    width: 243px;
+    font-size:14px;
+    /* 重置自带的border和padding */
+    padding: 0;
+    border:1px solid rgb(224, 224, 224);
+    float: left;
+    /* 文本框 按钮是行内块元素 类似于图片
+    这俩之间并排时会有缝隙 可以通过浮动解决 */
+
+    text-indent:10px;
+    /* 文本框缩进 */
+
+    outline: none;
+    /* 重置获取焦点时产生的轮廓 */
+
+}
+
+/* 按钮 */
+form button{
+    height: 48px;
+    width: 50px;
+    padding: 0;
+    border: none;
+    float: left;
+    color: #616161;
+    background-color: white;
+
+
+    box-sizing: content-box;
+    /* button默认按钮box-sizing是border-box 所以50*48包括了border
+    需要重置一下 */
+
+    border:1px solid rgb(224, 224, 224);
+    border-left: none;
+    /* 设置边框 */
+
+}
+
+/* 移入按钮 */
+form button:hover{
+    color: white;
+    background-color: rgb(255, 103, 0);
+}
+
+/* 获取焦点(点击文本框) */
+form input:focus{
+    border:1px solid rgb(255, 103, 0);
+    /* 文本框边框变色 */
+}
+form input:focus+button{
+    border:1px solid rgb(255, 103, 0);
+    border-left: none;
+    /* 按钮边框变色 */
+}
+/* 
+搜索框整体设置:296*50 具有一个搜索框的边框 和 按钮的上下右边框(没有左)
+因此搜索栏内容区大小243*48
+按钮内容区大小50*48
+宽243+50+3*1=296
+高48+2*1=50 
+*/
+
+/*====================================================================*/
+
+/* 以上是第二个导航栏的样式 */
+
+/* 
+1.垂直居中:可以用绝对定位 还有其他方法
+2.绝对定位:不设置left top就在原位置 不会定位至根元素
+3.多选项的下拉框问题:看笔记
+4.超链接要设置宽高 否则没有背景 因为0*0的背景没有 
+5.若父元素浮动 子元素垂直外边距不会影响父元素
+6.text-indent文本框缩进 
+*/
+
+/*====================================================================*/
+
+/* 主体 */
+main{
+    height: 460px;
+    width: 1226px;
+    margin: 0 auto;
+    margin-bottom: 14px;
+    
+    /* 为图片开启相对定位 */
+    position: relative;
+}
+
+/****************************************/
+
+/* 主体的左侧导航栏 */
+.main_nav{
+    /* float: left; */
+    height: 460px;
+    width: 234px;
+    background-color: rgba(0, 0, 0, 0.6);
+
+    /* 开启绝对定位 才能设置层级 
+    如果不开定位 会被开了定位的元素挡住 */
+    position: absolute;
+    z-index: 100;
+
+}
+
+/* 左侧导航栏的li设置 */
+.main_nav li{
+    padding-left: 30px;
+    padding-right: 30px;
+    color: white;
+    font-size: 14px;
+    height: 42px;
+    /* 文字居中 */
+    line-height: 42px;
+    /* 开启相对定位 */
+    position: relative;
+    
+}
+
+/* 左侧导航栏整体设置 */
+.main_nav ul {
+    padding-top: 20px;
+
+}
+
+/* 每个li的右箭头 */
+.main_nav i{
+    /* 开启绝对定位 把箭头移到最右边 */
+    position: absolute;
+    left: 196px;
+    top: 14px;
+}
+
+/* 鼠标移入左侧导肮栏 */
+.main_nav li:hover{
+    background-color: #FF6700;
+}
+
+/****************************************/
+
+/* 主体图片设置 */
+main img{
+    width: 100%;
+    height: 100%;
+
+    /* 开启绝对定位 */
+    position: absolute;
+
+
+}
+
+/****************************************/
+/* banner池左箭头 */
+
+main .a_left{
+
+    width: 41px;
+    height: 69px;
+    /* 脱离文档流了 可以写宽高 */
+    position: absolute;
+    left: 234px;
+    top: 190px;
+    background-image: url('../../../../笔记/code/mi/img/icon-slides.png');
+    /* 不显示图片时检查一下路径 */
+    background-position: -84px 0;
+}
+/* banner池右箭头 */
+main .a_right {
+    width: 41px;
+    height: 69px;
+    position: absolute;
+    left: 1185px;
+    top: 190px;
+    background-image: url('../../../../笔记/code/mi/img/icon-slides.png');
+    background-position: -125px 0;
+    /* 设置雪碧图偏移量 */
+}
+
+main .a_left:hover{
+    background-position: 0 0;
+    /* 设置雪碧图偏移量 */
+}
+
+main .a_right:hover{
+    background-position: -42px 0;
+    /* 设置雪碧图偏移量 */
+}
+
+
+/****************************************/
+
+
+/* 主体轮播点总体 */
+.point{
+    position: absolute;
+    left: 1100px;
+    top: 415px;
+    z-index: 10000;
+}
+
+/* 主题轮播点单独设置 */
+.point li{
+    width: 7px;
+    height: 7px;
+    float: right;
+    margin-right: 6px;
+    background-color: rgb(128, 133, 134);
+    border-radius: 50%;
+    border: 3px solid rgb(179, 182, 183);
+}
+
+/* 鼠标移入轮播点 */
+.point li:hover{
+    background-color: white;
+    border: 3px solid rgb(128, 133, 134);
+}
+
+/* 选择第一个超链接,对超链接的后代li操作 */
+.point a:nth-child(5) li{
+    background-color: white;
+    border: 3px solid rgb(128, 133, 134);
+    /* 默认选择 */
+}
+/*====================================================================*/
+
+/* 以上是主体的样式 */
+
+/* 
+1.层级问题:开了绝对定位才能zindex 不开会被绝对定位元素挡住
+*/
+
+/*====================================================================*/
+
+/* 底部总体 */
+footer{
+    width: 1226px;
+    margin: 0 auto;
+    height: 170px;
+}
+/****************************************/
+/* 底部左侧栏 */
+.footer_nav{
+    width: 234px;
+    height: 170px;
+    background-color: #5F5750;
+    float: left;
+}
+
+/* 左侧导航栏的li元素 */
+
+.footer_nav li{
+    width: 76px;
+    height: 84px;
+    float: left;
+    /* 水平居中 */
+    text-align: center;
+}
+
+/* 左侧导航栏的文字 */
+.footer_nav li p{
+    font-size: 12px;
+    color: rgb(207, 204, 202);
+}
+
+/* 左侧导航栏的图标 */
+/* 问:怎么让i垂直居中?设置上边距?*/
+.footer_nav li i{
+    margin-top: 20px;
+    margin-bottom: 5px;
+    font-size: 20px;
+    color: rgb(207, 204, 202);
+}
+
+/* 竖着的分割线 */
+.footer_nav_line{
+    height: 60px;
+    width: 1px;
+    float: left;
+    background-color: #cfccca10;
+    margin-left: 1px;
+    margin-right: 1px;
+    margin-top: 12px;
+
+}
+
+/* 上导航栏由于塌陷 导致middle跑到左上角了 */
+.middle{
+    position: relative;
+}
+
+/* 横着的分割线 */
+.footer_nav_line2{
+    width: 60px;
+    height: 2px;
+    position: absolute;
+    background-color: #cfccca10;
+
+}
+
+/* 移动绝对定位的横分割线 */
+.line1{
+    left: 9px;
+    top: 84px;
+}
+.line2{
+    left: 87px;
+    top: 84px;
+}
+.line3{
+    left: 165px;
+    top: 84px;
+}
+
+/* 左侧导航栏鼠标移入 */
+.footer_nav a:hover li i,
+.footer_nav a:hover li p{
+    /* 不是.footer_nav li:hover */
+    color: white;
+}
+/****************************************/
+/* 底部右侧图片框 */
+.footer_picture{
+    width: 978px;
+    float: right;
+    height: 170px;
+}
+
+/* 装图片的li */
+.footer_picture li{
+    float:left;
+}
+
+/* 设置边距 注意最后一张图片没有边距 */
+.footer_picture a:nth-child(1) li,
+.footer_picture a:nth-child(2) li{
+    /* 给第1,2个超链接的后代li设置右边距 */
+    margin-right: 15px;
+
+}
+
+/* 图片 */
+.footer_picture img{
+    width: 316px;
+    height: 170px;
+}
+
+
+
+
+
+/*====================================================================*/
+
+/* 以上是底部样式 */
+
+
+/*====================================================================*/

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            height: 200px;
+            width: 200px;
+            background-color: aquamarine;
+            background-image: url("../../笔记/code/06_font&background/img/1.png");
+            background-repeat: no-repeat;
+            background-position: 0 0;
+            padding: 10px;
+            border: 10px red double;
+
+            background-clip: content-box;
+            background-origin: padding-box;
+            /* 图片偏移量从padding开始
+            背景只显示content
+            因此被截掉一部分 */
+            background-size: contain;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+</body>
+</html>

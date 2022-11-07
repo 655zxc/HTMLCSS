@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div.inner{
+            width: 180px;
+            height: 50px;
+            background-color: #E8E7E3;
+            color: #777777;
+            float: left;
+            font-size: 20px;
+            text-align: center;
+            /* 水平居中 */
+            line-height: 50px;
+            /*水平高度*/
+
+        }
+
+        div:hover {
+            color: #E8E7E3;
+            background-color: #3F3F3F;
+        }
+
+        /* 写一个div装浮动元素 限制元素范围 */
+        .outer{
+            width:1260px;
+            height:50px;
+            /* 一个刚好装下所有元素的范围 */
+
+            margin: 100px auto;
+            /* 居中 */
+        }
+    </style>
+</head>
+
+<body>
+
+       
+
+    <!-- 整个块都是超链接 因此把div放在a里 -->
+        <div class="outer"> <a href="">
+            <div class="inner"><span>HTML/CSS</span></div>
+        </a>
+        <a href="">
+            <div class="inner"><span>Browser&nbsp;Side</span></div>
+        </a>
+        <a href="">
+            <div class="inner"><span>Server&nbsp;Side</span></div>
+        </a>
+        <a href="">
+            <div class="inner"><span>Programming</span></div>
+        </a>
+        <a href="">
+            <div class="inner"><span>XML</span></div>
+        </a>
+        <a href="">
+            <div class="inner"><span>Web&nbsp;Building</span></div>
+        </a>
+        <a href="">
+            <div class="inner"><span>Reference</span></div>
+        </a></div>
+
+
+</body>
+
+</html>

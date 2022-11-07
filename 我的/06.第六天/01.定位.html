@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+                body{
+            font-size: 60px;
+        }
+
+        /* 块元素独占一行 为什么box2能上去?
+        相对位置?给box1设置一个上边距100 box2同样会移动 */
+
+        /* div2 原先所在位置行， 因为 div 向上移动 导致 行高变为0 塌陷了 所以 div 3 会上移动  ，div2移动后，他所占的行不会移动 且塌陷为0 */
+
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+            /* margin-top: 100px; */
+        }
+
+        .box2{
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+
+            margin-left: 200px;
+            margin-top: -200px;
+
+        }
+
+        .box3{
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            
+
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">1</div>
+    <div class="box2">2</div>
+    <div class="box3">3</div>
+</body>
+</html>

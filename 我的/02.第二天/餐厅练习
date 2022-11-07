@@ -1,0 +1,96 @@
+4 6  9 10 11 12 
+*16 *17 *18 **19 *23 *26
+
+
+总结
+①可以直接选 不用层层选
+②选择父元素 后代元素都会被选
+③理解 16题中 :only-child 会选择其中只有一个的元素
+      17题中 apple:first-child 会选择是apple 且是 第一个元素 
+      18题中 plate:nth-child(3) 会选择是plate 且是 第三个元素
+      19题中 bento:nth-last-child(4) 选择是bento 且是 倒数第四个元素        
+             如果想实现选择xx的第xx个元素 要加上type
+ 
+
+             
+
+
+
+
+
+
+
+
+
+
+
+4.
+不用层层选
+直接plate>apple
+
+6.
+apple.small
+不用层层选 可以直接选
+
+9.
+apple包含在plate里
+那就直接选择plate
+
+10.
+全部 *
+
+11.
+观察
+全在盘子里
+plate > *
+
+12.
+plate+apple
+我的写法plate+apple.small,plate+apple
+直接写plate+apple
+apple也会包含small的 因为apple.small只是一个特殊的apple
+
+16.
+only-child
+
+17.
+apple:first-child,pickle:last-child
+选择所有apple中的第一个以及...
+
+18.
+plate:nth-child(3)
+
+是盘子 且是第三个
+
+不是plate>:nth-child(3)
+这题里面没有子类
+
+别看到伪类就用>
+
+19.
+bento:nth-last-child(4)
+不是
+bento:nth-last-child(2)
+
+这句话的意思是
+是bento 且 是倒数第2个物品
+
+加上type同类比较才能这样写
+
+23.
+plate apple:only-of-type
+选择盘子里的所有apple 且是唯一 且是同类比较(apple)
+
+可以看成
+(plate apple):only-of-type
+
+
+26.
+apple:not(apple.small)
+注意不能写apple:not(1) ?
+not()括号里不能写数字 ?
+
+
+
+
+

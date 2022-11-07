@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .clock{
+            width: 200px;
+            height: 200px;
+
+            margin: 0 auto;
+
+            position: relative;
+
+        }
+
+        img{
+            width: 200px;
+        }
+
+        @keyframes run {
+                from{
+                    transform:rotateZ(0);
+                }
+
+                to{
+                    transform:rotateZ(360deg);
+                }
+            }
+            /* 转一圈的动画 */
+
+            .clock>div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+        }
+        /* 设置容器的绝对定位 并且让所有容器居中 */
+        /* 不用像下面一样麻烦了 */
+        /* >是子元素 不是后代元素 */
+
+
+        .secondhand_container{
+            /* 容器比时钟小 */
+            /* 设置父元素的百分比 */
+            width: 70%;
+            height: 70%;
+
+            /* 定位容器到中间 */
+            /* position: absolute;
+            left: 25px;
+            top: 25px; */
+            
+            /* 使用动画 */
+            animation: 60s steps(60) run;
+            
+        }
+
+        .secondhand{
+            width: 2px;
+            height: 50%;
+            /* 设置父元素的50% */
+            background-color: brown;
+            margin: 0 auto;
+        }
+
+        .minutehand_container{
+            
+            width: 50%;
+            height: 50%;
+
+            /* 定位容器到中间 */
+            /* position: absolute;
+            left: 45px;
+            top: 45px; */
+            
+            
+            animation: 3600s steps(60) run;
+            
+        }
+
+        .minutehand{
+            width: 3px;
+            height: 50%;
+            background-color: black;
+            margin: 0 auto;
+        }
+
+        .hourhand_container{
+            
+            width: 30%;
+            height: 30%;
+
+            /* 定位容器到中间 */
+            /* position: absolute;
+            left: 65px;
+            top: 65px; */
+            
+            
+            animation: 86400s steps(60) run;
+            
+        }
+
+        .hourhand{
+            width: 4px;
+            height: 50%;
+            background-color: black;
+            margin: 0 auto;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="clock">
+        <img src="../../笔记/code/exercise/img/13/bg.png" alt="">
+        <div class="secondhand_container">
+            <div class="secondhand"></div>
+        </div>
+        <!-- 用一个容器包含分针 让容器转动 -->
+    
+        <div class="minutehand_container">
+            <div class="minutehand"></div>
+        </div>
+    
+        <div class="hourhand_container">
+            <div class="hourhand"></div>
+        </div>
+    </div>
+    
+
+
+</body>
+</html>

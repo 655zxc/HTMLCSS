@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../笔记/code/exercise/css/reset.css">
+    <link rel="stylesheet" href="../../笔记/code/06_font&background/fa/css/all.css">
+    <link rel="stylesheet" href="./iconfont/iconfont.css">
+    <style>
+        .outer {
+            height: 30px;
+            background-color: rgb(227, 228, 229);
+        }
+
+        .inner {
+            height: 30px;
+            width: 1200px;
+            margin: 0 auto;
+            /* background-color: salmon; */
+            background-color: rgb(227, 228, 229);
+        }
+
+
+
+        li {
+            /* width: 70px; */
+            /* li是没有设置宽度的 */
+            height: 30px;
+            font-size: 10px;
+            float: left;
+            /* 浮动 成行 */
+
+            text-align: center;
+            line-height: 30px;
+            /* 文字的水平和垂直对准 */
+        }
+
+
+        .left {
+            float: left;
+        }
+        .right{
+            float: right;
+        }
+        /* 这两个框 一个向左浮动 一个向右浮动 */
+        /* 这里如果inner不设置高度 就会高度塌陷 在标签家clearfix也行*/
+        /* 注意 left和right的子元素还是向左浮动 否则会顺序颠倒 见32行 */
+
+        a {
+            color: rgb(153, 153, 153);
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: salmon;
+        }
+
+        .right li:nth-child(2) a,
+        .right li:nth-child(6) a {
+            color: salmon;
+        }
+
+
+
+        .right .line{
+            width: 1px;
+            height: 10px;
+            background-color: rgb(153, 153, 153);
+            margin: 10px 12px;
+            /* 设置分隔线 位置 并且用一个左右距离把li分开 */
+        }
+
+
+
+
+/*==============================下面是设置城市框=============================================*/
+/* 
+1.设置li正常状态的隐形框
+2.设置li选中状态
+3.设置选中时下拉框状态 
+*/
+
+
+
+        /* 这里不能写.left i:hover 否则移开北京框就消失了
+            写成left 鼠标指向北京和city都会触发*/
+        .left:hover .city{
+            /* 以下设置city的详细信息 */
+            width: 320px;
+            height: 436px;
+            /* display: block; */
+            background-color:white;
+            margin-top: 30px;
+            /* 由于li浮动 city会上移 设置一个margintop
+            也可以相对定位inner 绝对定位city */
+            border: 1px solid rgb(153, 153, 153);
+        }
+
+        /* .left:hover .city的意思是当left选中时 对city进行操作
+        注意 在触发之前 city没有大小 left的大小只有北京
+               触发之后 city有了width heigth left的大小是北京+city
+                只有在被选中的时候city才有大小  */
+
+            
+
+            .city{
+            
+            z-index: 999;
+            box-shadow: 0 2px 2px rgba(0, 0, 0, .2)
+            }
+
+        
+
+            .left li{
+                width: 50px;
+                height: 30px;
+               
+                z-index: 9999;
+                /*交界处 盖住city */
+                border: 1px solid transparent;
+                border-bottom: none;
+                /* 有个隐形的边框 */
+            }
+
+            .left:hover li{
+                background-color: white;
+                border: 1px solid rgb(153, 153, 153);
+                border-bottom: none;
+                /* 再次设置边框 加上颜色 */
+                
+                /* 没有下边距 */
+            }
+    </style>
+</head>
+
+<body>
+    <!-- 两个框 父outer占一行 子inner居中 -->
+    <div class="outer">
+        <div class="inner">
+
+
+            <!-- 在inner里面 写两个列表left和right
+            列表left向左浮动
+            列表right向右浮动
+            两个列表的子元素li都向左浮动 -->
+
+            <ul class="left">
+                <li><a href=""><i class="fas fa-map-marker-alt" style = "color: red;"></i> 北京</a></li>
+
+                <div class="city"></div>
+            </ul>
+
+            
+
+            <!-- 每个分割线都是一个块 并且边距将li分开 -->
+            <ul class="right">
+                <li><a href="">你好,请登录&nbsp;&nbsp;</a></li>
+                <li><a href="">免费注册</a></li>
+                <li class="line"></li>
+                <li><a href="">我的订单</a></li>
+                <li class="line"></li>
+                <li><a href="">我的京东 <i class="fas fa-angle-down"></i></a></li>
+                <li class="line"></li>
+                <li><a href="">京东会员</a></li>
+                <li class="line"></li>
+                <li><a href="">企业采购 <i class="fas fa-angle-down"></i></a></li>
+                <li class="line"></li>
+                <li><a href="">客户服务 <i class="fas fa-angle-down"></i></a></li>
+                <li class="line"></li>
+                <li><a href="">网站导航 <i class="fas fa-angle-down"></i></i></a></li>
+                <li class="line"></li>
+                <li><a href="">手机京东</a></li>
+
+
+
+                <!-- 看情况 选字体 li 套 a
+                     选块 a 套 li  -->
+
+                     <!-- 分隔线是一个宽1px的div 在css设置宽高 -->
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

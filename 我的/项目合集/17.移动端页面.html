@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../笔记/code/06_font&background/fa/css/all.css">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            font-size: 5.333333333vw;
+        }
+
+        body {
+            background-color: gainsboro;
+        }
+
+        body>div {
+            width: 17.5rem;
+            display: flex;
+            margin: 0 auto;
+        }
+
+        /* 定义一个公用的容器 最好用类命名*/
+
+
+        .box1 {
+            justify-content: space-between;
+            /* 水平居中 */
+            align-items: center;
+            /* 垂直居中有两种 区别见十三日的总结 */
+            height: 4rem;
+        }
+
+        .box2 img {
+            width: 100%;
+        }
+
+        .box3 {
+            flex-wrap: wrap;
+            /* 换行 */
+            justify-content: space-between;
+            align-content: space-evenly;
+            height: 9rem;
+        }
+
+        .box3 a {
+            display: block;
+            width: 7rem;
+            height: 2.5rem;
+            background-color: coral;
+            border-radius: 0.2rem;
+            /* div包含a 给a切圆角 而不是div? */
+            text-decoration: none;
+            color: white;
+            /* text-align: center; */
+            /* 水平居中 但观察 原版并不是水平居中*/
+            line-height: 2.5rem;
+            /* 垂直居中 */
+        }
+
+        .box3 i {
+            margin-left: 0.8rem;
+            margin-right: 0.25rem;
+            /* 设置图标的margin让文字对齐 */
+        }
+
+        /* =================================================================== */
+        /* 设置box4 */
+        .box4 {
+            /* height: 8rem; */
+            flex-wrap: wrap;
+            /* 换行 */
+            
+        }
+
+
+        /* 设置标题 */
+        .class-title {
+            width: 100%;
+
+            display: flex;
+            justify-content: space-between;
+
+            font-size: 0.6rem;
+            text-decoration: none;
+
+        }
+
+        /* 标题右边的超链接 */
+        .class-title a {
+            text-decoration: none;
+            color: black;
+            font-size: 0.7rem;
+        }
+
+        /* 标题的左边 设置左边的蓝色分割号*/
+        .class-title h2 {
+            border-left: 3px solid cornflowerblue;
+            /* 蓝色左边框 */
+            padding-left: 8px;
+            /* 左内距 */
+        }
+
+
+
+        /* 课程列表 */
+        .class-list {
+            /* width: 100%; */
+            /* 设置宽度后 就无法溢出了? */
+            margin-top: 0.5rem;
+            /* 标题和列表之间的空隙 */
+            margin-bottom: 1em;
+            /* 与下一个课程列表的距离 */
+            display: flex;
+            /* 弹性布局 */
+            
+            overflow: auto;
+            /* 溢出的变成滚动 */
+        }
+
+        .class-content {
+            flex:none;
+            /* 不会伸缩 让元素溢出 */
+            /* 这个是设置给弹性元素的 不是弹性盒子的 */
+
+
+
+            height: 8rem;
+            width: 7rem;
+            background-color: white;
+            border-radius: 5px;
+
+            margin-right: 0.5rem;
+
+            padding: 0 0.6rem;
+            /* 设置内边距 让课程的内容离左边一段距离*/
+
+            display: flex;
+            /* 开启弹性布局 */
+            flex-direction: column;
+            /* 让元素竖直排列 */
+            justify-content: space-evenly;
+            /* 让主轴上的元素均匀排列 */
+            /* 这样做很方便 不需要为每个元素设置边距 */
+        }
+
+        .class-content img {
+            width: 98%;
+
+        }
+
+        /* 课程标题 */
+        .class-name {
+            font-size: 0.6rem;
+        }
+
+        /* 用户信息设置 */
+        .class-user {
+            display: flex;
+            /* 因为要头像和名字横向排列 所以flex */
+
+            align-items: center;
+        }
+
+        .class-user img {
+            width: 15%;
+        }
+
+        .user-name {
+            font-size: 0.5rem;
+            padding-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">
+        <div class="left">
+            <a href="">
+                <i class="fas fa-stream"></i>
+            </a>
+        </div>
+        <p>I Learn</p>
+        <div class="right">
+            <a href="">
+                <i class="fas fa-search"></i>
+            </a>
+        </div>
+    </div>
+    <div class="box2"><img src="../../笔记/code/exercise/img/17/banner.png" alt=""></div>
+    <div class="box3">
+        <a class="course" href="#">
+            <i class="fas fa-book"></i>
+            我的课程
+        </a>
+        <a class="star" href="#">
+            <i class="fas fa-cut"></i>
+            明星讲师
+        </a>
+        <a class="sub" href="#">
+            <i class="fas fa-envelope"></i>
+            我的订阅</a>
+        <a class="download" href="#">
+            <i class="fas fa-globe"></i>
+            我的下载</a>
+    </div>
+
+    <!-- =============================================================== -->
+
+    <!-- 总课程 -->
+    <div class="box4">
+
+
+
+        <!-- 课程标题 标题并没有设置高度 被字体撑开-->
+        <div class="class-title">
+            <h2>最新课程</h2>
+            <a href="">更多+</a>
+        </div>
+
+
+
+        <!-- 课程列表 -->
+        <div class="class-list">
+            <div class="class-content">
+
+                <!-- 课程封面 -->
+                <div class="class-cover">
+                    <img src="../../笔记/code/exercise/img/17/cover.png" alt="">
+                </div>
+
+
+                <!-- 课程标题 -->
+                <div class="class-name">
+                    <h3>课程标题</h3>
+                </div>
+
+
+                <!-- 用户信息 -->
+                <div class="class-user">
+
+                    <!-- 用户头像 -->
+                    <img src="../../笔记/code/exercise/img/17/avatar.png" alt="">
+
+
+                    <!-- 用户名字 -->
+                    <div class="user-name">
+                        用户昵称
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+
+            <!-- 重复以上内容 -->
+            <div class="class-content">
+
+                <!-- 课程封面 -->
+                <div class="class-cover">
+                    <img src="../../笔记/code/exercise/img/17/cover.png" alt="">
+                </div>
+
+
+                <!-- 课程标题 -->
+                <div class="class-name">
+                    <h3>课程标题</h3>
+                </div>
+
+
+                <!-- 用户信息 -->
+                <div class="class-user">
+
+                    <!-- 用户头像 -->
+                    <img src="../../笔记/code/exercise/img/17/avatar.png" alt="">
+
+
+                    <!-- 用户名字 -->
+                    <div class="user-name">
+                        用户昵称
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- 重复以上内容 -->
+            <div class="class-content">
+
+                <!-- 课程封面 -->
+                <div class="class-cover">
+                    <img src="../../笔记/code/exercise/img/17/cover.png" alt="">
+                </div>
+
+
+                <!-- 课程标题 -->
+                <div class="class-name">
+                    <h3>课程标题</h3>
+                </div>
+
+
+                <!-- 用户信息 -->
+                <div class="class-user">
+
+                    <!-- 用户头像 -->
+                    <img src="../../笔记/code/exercise/img/17/avatar.png" alt="">
+
+
+                    <!-- 用户名字 -->
+                    <div class="user-name">
+                        用户昵称
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- 重复以上内容 -->
+            <div class="class-content">
+
+                <!-- 课程封面 -->
+                <div class="class-cover">
+                    <img src="../../笔记/code/exercise/img/17/cover.png" alt="">
+                </div>
+
+
+                <!-- 课程标题 -->
+                <div class="class-name">
+                    <h3>课程标题</h3>
+                </div>
+
+
+                <!-- 用户信息 -->
+                <div class="class-user">
+
+                    <!-- 用户头像 -->
+                    <img src="../../笔记/code/exercise/img/17/avatar.png" alt="">
+
+
+                    <!-- 用户名字 -->
+                    <div class="user-name">
+                        用户昵称
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="box4">
+
+
+
+        <!-- 课程标题 标题并没有设置高度 被字体撑开-->
+        <div class="class-title">
+            <h2>最新课程</h2>
+            <a href="">更多+</a>
+        </div>
+
+
+
+        <!-- 课程列表 -->
+        <div class="class-list">
+            <div class="class-content">
+
+                <!-- 课程封面 -->
+                <div class="class-cover">
+                    <img src="../../笔记/code/exercise/img/17/cover.png" alt="">
+                </div>
+
+
+                <!-- 课程标题 -->
+                <div class="class-name">
+                    <h3>课程标题</h3>
+                </div>
+
+
+                <!-- 用户信息 -->
+                <div class="class-user">
+
+                    <!-- 用户头像 -->
+                    <img src="../../笔记/code/exercise/img/17/avatar.png" alt="">
+
+
+                    <!-- 用户名字 -->
+                    <div class="user-name">
+                        用户昵称
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+
+            <!-- 重复以上内容 -->
+            <div class="class-content">
+
+                <!-- 课程封面 -->
+                <div class="class-cover">
+                    <img src="../../笔记/code/exercise/img/17/cover.png" alt="">
+                </div>
+
+
+                <!-- 课程标题 -->
+                <div class="class-name">
+                    <h3>课程标题</h3>
+                </div>
+
+
+                <!-- 用户信息 -->
+                <div class="class-user">
+
+                    <!-- 用户头像 -->
+                    <img src="../../笔记/code/exercise/img/17/avatar.png" alt="">
+
+
+                    <!-- 用户名字 -->
+                    <div class="user-name">
+                        用户昵称
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- 重复以上内容 -->
+            <div class="class-content">
+
+                <!-- 课程封面 -->
+                <div class="class-cover">
+                    <img src="../../笔记/code/exercise/img/17/cover.png" alt="">
+                </div>
+
+
+                <!-- 课程标题 -->
+                <div class="class-name">
+                    <h3>课程标题</h3>
+                </div>
+
+
+                <!-- 用户信息 -->
+                <div class="class-user">
+
+                    <!-- 用户头像 -->
+                    <img src="../../笔记/code/exercise/img/17/avatar.png" alt="">
+
+
+                    <!-- 用户名字 -->
+                    <div class="user-name">
+                        用户昵称
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- 重复以上内容 -->
+            <div class="class-content">
+
+                <!-- 课程封面 -->
+                <div class="class-cover">
+                    <img src="../../笔记/code/exercise/img/17/cover.png" alt="">
+                </div>
+
+
+                <!-- 课程标题 -->
+                <div class="class-name">
+                    <h3>课程标题</h3>
+                </div>
+
+
+                <!-- 用户信息 -->
+                <div class="class-user">
+
+                    <!-- 用户头像 -->
+                    <img src="../../笔记/code/exercise/img/17/avatar.png" alt="">
+
+
+                    <!-- 用户名字 -->
+                    <div class="user-name">
+                        用户昵称
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+
+</body>
+
+</html>

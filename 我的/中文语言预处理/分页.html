@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>分页</title>
+    <link rel="icon" href="../static/icon.png" type="image/x-icon"/>
+    <link rel="stylesheet" href="./style2.css">
+
+</head>
+
+<body>
+
+
+<div class="container">
+    
+    <div class="card">
+        <div class="left"></div>
+        <form method="post">
+            <div align="center">
+                <!-- <p><strong >输入语句：</strong></p> -->
+                <textarea class="input" name=sentence placeholder="输入语句">{{ input_content }}</textarea>
+                <!-- 输入框 -->
+                <br>
+               <p><a href="" class = "a_button"> <input class="confirm" type="submit" value="确认"></a></p>
+                <!-- 按钮 -->
+                <br>
+                <br>
+                <!-- <strong >生成内容：</strong> -->
+                <br>
+                <br>
+                <textarea class="output" readonly="readonly" placeholder="生成内容">{{ spilt_result }}</textarea>
+                <!-- 输出框 -->
+            </div>
+        </form>
+        <p style="text-align: center" ><a class = "return" href="{{ url_for('index') }}">返回首页</a></p>
+        <!-- 返回首页 -->
+    </div>
+</div>
+
+
+</body>
+
+</html>

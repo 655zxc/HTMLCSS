@@ -1,0 +1,291 @@
+<!-- 此html是项目主要文件 -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小米商城 - Redmi Note 8、小米CC9、小米MIX 3，小米电视官方网站</title>
+    <link rel="stylesheet" href="../../../笔记/code/exercise/css/reset.css">
+    <link rel="stylesheet" href="../../../笔记/code/06_font&background/fa/css/all.css">
+    <link rel="stylesheet" href="./MI_CSS/index.css">
+    <link rel="stylesheet" href="./MI_CSS/base.css">
+    <link rel="stylesheet" href="./MI_CSS/reset.css">
+    <link rel="stylesheet" href="../iconfont/iconfont.css">
+    <link rel="icon" href="../../../笔记/code/mi/favicon.ico">
+    <!-- 网站图标 -->
+</head>
+
+<body>
+    <head>
+        <div class="head_title1">
+            <!-- 顶部导航栏 写两个div 一个设置位置 一个居中-->
+            <div class="outer">
+                <div class="inner">
+                    <!-- 共有三个列表 -->
+                    <ul class="left">
+                        <!-- 分割号用line 别用div 要额外设置浮动-->
+                        <li><a href="">小米商城</a></li>
+                        <li class="line"></li>
+                        <li><a href="">MIUI</a></li>
+                        <li class="line"></li>
+                        <li><a href="">IoT</a></li>
+                        <li class="line"></li>
+                        <li><a href="">云服务</a></li>
+                        <li class="line"></li>
+                        <li><a href="">金融</a></li>
+                        <li class="line"></li>
+                        <li><a href="">有品</a></li>
+                        <li class="line"></li>
+                        <li><a href="">小爱开发平台</a></li>
+                        <li class="line"></li>
+                        <li><a href="">企业团购</a></li>
+                        <li class="line"></li>
+                        <li><a href="">资质证照</a></li>
+                        <li class="line"></li>
+                        <li><a href="">协议规则</a></li>
+                        <li class="line"></li>
+                        <li class="app-wrapper">
+                            <a href="" class="download_app">
+                                下载app
+                                <div class="delta">
+                                    <!-- 三角形 -->
+                                </div>
+                                <!-- 添加一个弹出下拉框 -->
+                                <!-- 该下拉框和下载app同样可以点击 因此放在同一个a里 -->
+                                <div class="qrcode">
+                                    <img src="../../../笔记/code/mi/img/download.png">
+                                    <br>
+                                    <span>小米商城app</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="line"></li>
+                        <li><a href="">Select Location</a></li>
+                    </ul>
+                    <ul class="shopping_cart">
+                        <a href="">
+                            <li><i class="fas fa-cart-arrow-down"></i>&nbsp;&nbsp;购物车(0)</li>
+                        </a>
+                    </ul>
+                    <ul class="right">
+                        <li><a href="">登录</a></li>
+                        <li class="line"></li>
+                        <li><a href="">注册</a></li>
+                        <li class="line"></li>
+                        <li><a href="">消息通知</a></li>
+                    </ul>
+
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+        <div class="head_title2">
+            <!-- logo -->
+            <div class="logo">
+                <!-- 两张图 设置为55*55大小的超链接的背景-->
+                <a class="mi" href=""></a>
+                <a class="home" href=""></a>
+            </div>
+            <!-- 中间导航栏 -->
+            <div class="title2_nav">
+                <ul>
+                    <li class="a_ComboBox"><a href="">小米手机</a></li>
+                    <li class="a_ComboBox"><a href="">Redmi 红米</a></li>
+                    <li class="a_ComboBox"><a href="">电视</a></li>
+                    <li class="a_ComboBox"><a href="">笔记本</a></li>
+                    <li class="a_ComboBox"><a href="">家电</a></li>
+                    <li class="a_ComboBox"><a href="">路由器</a></li>
+                    <li class="a_ComboBox"><a href="">智能硬件</a></li>
+                    <li><a href="">服务</a></li>
+                    <li><a href="">社区</a></li>
+                    <!-- 下拉框 -->
+                    <!-- 一开始我把下拉框设置为title2_nav的兄弟元素
+                    这样的话 当我们写a_ComboBox:hover 选不到ComboBox了
+                    ComboBox在太外层 因此把ComboBox和li写成兄弟元素 -->
+                    <div class="ComboBox"></div>
+                </ul>
+            </div>
+            <!-- 搜索栏 -->
+            <div class="search">
+                <form action="">
+                    <input type="">
+                    <button><i class = "fas fa-search" style = "font-size: 17px;"></i></button>
+                </form>
+            </div>
+        </div>
+    </head>
+
+
+
+
+
+
+
+
+
+
+    <main>
+        <!-- 图片 -->
+        <a href=""><img src="../../../笔记/code/mi/img/banner1.jpg" alt=""></a>
+        <a href=""><img src="../../../笔记/code/mi/img/banner2.jpg" alt=""></a>
+        <a href=""><img src="../../../笔记/code/mi/img/banner3.jpg" alt=""></a>
+        <a href=""><img src="../../../笔记/code/mi/img/banner4.jpg" alt=""></a>
+        <a href=""><img src="../../../笔记/code/mi/img/banner5.jpg" alt=""></a>
+
+        <!-- banner池箭头 -->
+        <a class="a_left" href="">
+          
+        </a>
+        <a class="a_right" href="">
+           
+        </a>
+
+        <!-- 左侧导航栏 -->
+        <nav class="main_nav">
+            <ul>
+                <a href="">
+                    <li>手机 电话卡<i class="fas fa-angle-right"></i></li>
+                </a>
+                <a href="">
+                    <li>电视 盒子<i class="fas fa-angle-right"></i></li>
+                </a>
+                <a href="">
+                    <li>笔记本 平板<i class="fas fa-angle-right"></i></li>
+                </a>
+                <a href="">
+                    <li>家电 插线板<i class="fas fa-angle-right"></i></li>
+                </a>
+                <a href="">
+                    <li>出行 穿戴<i class="fas fa-angle-right"></i></li>
+                </a>
+                <a href="">
+                    <li>智能 路由器<i class="fas fa-angle-right"></i></li>
+                </a>
+                <a href="">
+                    <li>电源 配件<i class="fas fa-angle-right"></i></li>
+                </a>
+                <a href="">
+                    <li>健康 儿童<i class="fas fa-angle-right"></i></li>
+                </a>
+                <a href="">
+                    <li>耳机 音箱<i class="fas fa-angle-right"></i></li>
+                </a>
+                <a href="">
+                    <li>生活 箱包<i class="fas fa-angle-right"></i></li>
+                </a>
+            </ul>
+        </nav>
+
+        <ul class="point">
+            <a href="">
+                <li></li>
+            </a>
+            <a href="">
+                <li></li>
+            </a>
+            <a href="">
+                <li></li>
+            </a>
+            <a href="">
+                <li></li>
+            </a>
+            <a href="">
+                <li></li>
+            </a>
+        </ul>
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+    <footer>
+        <!-- 底部左侧导航栏 -->
+        <nav class="footer_nav">
+            <!-- 底部左导航栏上部分 -->
+            <div class="top">
+                <ul>
+                    <!-- p新起一段 换行 -->
+                    <a href="">
+                        <li><i class="fas fa-clock"></i>
+                            <p>小米秒杀</p>
+                        </li>
+                    </a>
+                    <div class="footer_nav_line"></div>
+                    <a href="">
+                        <li><i class="fas fa-building"></i>
+                            <p>企业团购</p>
+                        </li>
+                    </a>
+                    <div class="footer_nav_line"></div>
+                    <a href="">
+                        <li><i class="fas fa-frog"></i>
+                            <p>F码通道</p>
+                        </li>
+                    </a>
+                </ul>
+
+            </div>
+            <!-- 底部左导航栏中间部分 分隔栏 -->
+            <div class="middle">
+                <div class="footer_nav_line2 line1"></div>
+                <div class="footer_nav_line2 line2"></div>
+                <div class="footer_nav_line2 line3"></div>
+            </div>
+            <!-- 底部左导航栏下部分 -->
+            <div class="bottom">
+                <ul>
+                    <a href="">
+                        <li><i class="fas fa-robot"></i>
+                            <p>米粉卡</p>
+                        </li>
+                    </a>
+                    <div class="footer_nav_line"></div>
+                    <a href="">
+                        <li><i class="fas fa-keyboard"></i>
+                            <p>以旧换新</p>
+                        </li>
+                    </a>
+                    <div class="footer_nav_line"></div>
+                    <a href="">
+                        <li><i class="fas fa-save"></i>
+                            <p>花费充值</p>
+                        </li>
+                    </a>
+                </ul>
+            </div>
+        </nav>
+        <div class="footer_picture">
+            <ul>
+                <a href="">
+                    <li><img src="../../../笔记/code/mi/img/1.jpg" alt=""></li>
+                </a>
+                <a href="">
+                    <li><img src="../../../笔记/code/mi/img/2.jpg" alt=""></li>
+                </a>
+                <a href="">
+                    <li><img src="../../../笔记/code/mi/img/3.jpg" alt=""></li>
+                </a>
+            </ul>
+        </div>
+    </footer>
+</body>
+
+</html>

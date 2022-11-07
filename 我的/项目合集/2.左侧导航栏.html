@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../笔记/code/exercise/css/reset.css">
+    <style>
+        body {
+            background-color: lightyellow;
+        }
+
+        .left-nav {
+            width: 200px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            margin: 100px auto;
+            background-color: white;
+        }
+
+        .left-nav li {
+            padding-top: 3px;
+            padding-bottom: 3px;
+            /* 同下 设置margin 则这部分不会被选中 */
+            font-family: Microsoft JhengHei;
+            padding-left:20px;
+            /* 如果在left-nav里设置padding-left 则会导致li:hover无法触发一整行 选择无法触发margin?*/
+            /* 注意这里不能用margin-left 这里属于内部 */
+            font-size: 17px;
+
+        }
+    
+
+        li:hover{
+            background-color: #d9d9d9;
+        }
+        /* color是字体变色
+        background-color选中边框以内 */
+        
+
+        a:hover{
+            color: #c81623;
+        }
+        /* 鼠标移动到超链接上有颜色 */
+        
+
+        a{
+            color: black;
+            /* 取消蓝色 */
+            text-decoration: none;
+            /* 取消下划线 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="left-nav">
+        <ul>
+            <li><a href="">家用电器</a></li>
+            <li><a href="">手机</a>/<a href="">运营商</a>/<a href="">数码</a></li>
+            <li>电脑</li>
+            <li>家居</li>
+            <li>男装</li>
+            <li>美妆</li>
+            <li>女鞋</li>
+            <li>男鞋</li>
+            <li>房产</li>
+            <li>母婴</li>
+            <li>食品</li>
+            <li>艺术</li>
+            <li>医药保健</li>
+            <li>图书</li>
+            <li>机票</li>
+            <li>理财</li>
+            <li>安装</li>
+            <li>工业品</li>
+        </ul>
+    </div>
+</body>
+
+</html>

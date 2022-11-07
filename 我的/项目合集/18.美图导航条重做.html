@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../笔记/code/exercise/css/reset.css">
+    <link rel="stylesheet" href="../../笔记/code/06_font&background/fa/css/all.css">
+    <style>
+        /* 顶部容器 */
+        .top{
+            height: 48px;
+            width: 100%;
+            background-color: black;
+            
+            /* 排列顶部 */
+            display: flex;
+            justify-content: space-between;
+            
+        }
+
+        /* 左侧图标 */
+        .menu-icon{
+            width: 48px;
+            height: 100%;
+
+            /* 把图标居中 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* 右侧图标 */
+        .right-user{
+            width: 48px;
+            height: 100%;
+            
+            /* 把图标居中 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        a{
+            text-decoration: none;
+            color: white;
+        }
+
+        /* 左侧菜单 */
+        .menu-nav{
+            /* 开启定位 根元素 */
+            position: absolute;
+            /* left: 0;
+            top: 0; */
+            /* 不写left top就在原位置 */
+            top: 48px;
+            left: 0;
+
+
+            width: 100%;
+            height: 80%;
+            background-color: black;
+
+            display: none;
+        }
+
+        /* 左侧菜单内部总体设置边距 */
+        .menu-nav ul{
+            width: 80%;
+            height: 50%;
+            /* 比菜单小 */
+
+            margin: 0 auto;
+            margin-top: 10%;
+            /* 父元素的宽度10% */
+
+
+            /* 绝对定位的元素不再受到外边距折叠吗?
+            nav绝对定位 ul是他的子元素 给ul设置了一个margin-top */
+        }
+
+        /* 左侧菜单各项单独设置 */
+        .menu-nav li{
+            width: 100%;
+            height: 16.6%;
+            /* 100/6 */
+            font-size: 14px;
+
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+            
+            /* 垂直居中 */
+            display: flex;
+            align-items: center;
+        }
+
+        .menu-icon:hover+.menu-nav,.menu-nav:hover{
+            /* 当图标hover对兄弟menu-nav操作
+            且menu-nav被hover时也操作 */
+            display: block;
+        }
+
+        /* 设置logo的a */
+        .middle-logo a{
+            display: block;
+            width: 122px;
+            height: 32px;
+            /* 给的是两倍图 244*64 所以a的范围缩小两倍 */
+            margin-top: 8px;
+
+            /* 设置背景 */
+            background-image: url('../../笔记/code/exercise/img/18/dff63979.sprites-index@2x.png');
+            background-size: 400px 400px;
+            /* 同上 图片缩小两倍 原本是800*800 现在是400*400*/
+        }
+
+        @media screen and (min-width:768px){
+            /* 外框 */
+            .outer{
+                width: 100%;
+                height: 48px;
+                background-color: black;
+            }
+            /* 内框 */
+            .top{
+                width: 80%;
+                margin: 0 auto;
+            }
+
+            .left-menu{
+                order: 2;
+                /* 重新排序 */
+
+                width: 80%;
+                /* 重新设置菜单的大小 */
+            }
+
+            .middle-logo{
+                order: 1;
+                /* 重新排序 */
+            }
+
+            .right-user{
+                order: 3;
+                 /* 重新排序 */
+            }
+
+             /* 主要修改中间的样式 */
+            .left-menu .menu-icon{
+                 display: none;
+                 /* 隐藏小图标 */
+             }
+
+             .left-menu .menu-nav{
+                 display: flex;
+                 /* 显示菜单 之前是display none */
+                 height: 48px;
+                 position: static;
+                 /* 关闭定位 让nav回到menu里面 */
+                 width: 100%;
+
+             }
+
+             /* 在以下部分 由于之前设置了ul li的宽高 边距 
+             并且都是取决于父元素 用的百分比 需要消除 */
+             /* 消除样式 */
+             .menu-nav ul{
+                 margin: 0;
+                 padding: 0;
+
+                 display: flex;
+                 justify-content: space-between;
+                 /* 注意nav套了一层ul ul再套了li
+                 所以flex要设置给ul 而且ul要设置宽高 */
+
+                 height: 48px;
+                 width: 100%;
+             }
+
+             /* 消除样式 */
+             .menu-nav li{
+                border: none;
+                margin: 0;
+                padding: 0;
+                height: 48px;
+                width: 16%;
+                
+                justify-content: center;
+                /* li在之前已经设置为flex了 可以从f12里面看到 */
+                
+             }
+
+             /* 元素的宽高尽量用百分比 方便缩放 */
+
+             .menu-nav li a{
+                 color: white;
+             }
+
+             .menu-nav a:hover,.right-user a:hover{
+                 color: silver;
+             }
+        }
+    </style>
+</head>
+<body>
+   <div class="outer">
+    <div class="top">
+
+
+        <div class="left-menu">
+
+
+            <div class="menu-icon">
+                <a href=""><i class="fas fa-bars"></i></a>
+            </div>
+
+
+            <div class="menu-nav">
+                <ul>
+                    <li> <a href="">手机</a></li>
+                    <li><a href="">美容仪器</a></li>
+                    <li><a href="">配件</a></li>
+                    <li><a href="">服务支持</a></li>
+                    <li><a href="">企业网站</a></li>
+                    <li><a href=""><i class="fas fa-search"></i>&nbsp;&nbsp;搜索Meitu.com</a></li>
+                </ul>
+            </div>
+
+
+        </div>
+
+
+
+
+        <div class="middle-logo">
+            <a href=""></a>
+        </div>
+
+
+
+
+        <div class="right-user">
+            <a href=""><i class="fas fa-user"></i></a>
+        </div>
+
+
+
+    </div>
+   </div>
+</body>
+</html>
